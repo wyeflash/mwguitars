@@ -16,3 +16,5 @@
 /tmp
 
 /db/cms_fixtures
+/public/spree
+/public/css
