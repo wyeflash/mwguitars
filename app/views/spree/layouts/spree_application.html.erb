@@ -4,33 +4,39 @@
 <!--[if IE 8 ]>    <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 9 ]>    <html class="ie ie9" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
-  <head data-hook="inside_head">
+ <head data-hook="inside_head">
     <%= render :partial => 'spree/shared/head' %>
-  </head>
-  <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+ </head>
+ <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
+<%= cms_snippet_content('header') %>
+    
 
-    <div class="container">
+
+      
+
+<div class="container-fluid">
 
       <%= render :partial => 'spree/shared/header' %>
 
+
+
       <div id="wrapper" class="row" data-hook>
-
         <%= breadcrumbs(@taxon) %>
-
         <%= render :partial => 'spree/shared/sidebar' if content_for? :sidebar %>
-
-        <div id="content" class="columns <%= !content_for?(:sidebar) ? "sixteen" : "twelve omega" %>" data-hook>
+        <div id="content" class=" <%= !content_for?(:sidebar) ? "col-md-12" : "col-md-9 omega" %>" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>
-
         <%= yield :templates %>
-
       </div>
 
-      <%= render :partial => 'spree/shared/footer' %>
+</div>
 
-    </div>
+
+    
+<%= cms_snippet_content('footer') %>
+
+
 
     <%= render :partial => 'spree/shared/google_analytics' %>
     <script>
