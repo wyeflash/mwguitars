@@ -19,3 +19,8 @@
 /public/spree
 /public/css
 /public/system
+/public/assets
+/public/*.gz
+/Gemfile
+/Gemfile.lock
+/config/database.yml
