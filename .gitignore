@@ -24,3 +24,4 @@
 /Gemfile
 /Gemfile.lock
 /config/database.yml
+/vendor
